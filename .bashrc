@@ -11,7 +11,6 @@ fi
 
 if [[ $EUID -ne 0 ]]; then
 	# non-root onlY:
-	source virtualenvwrapper.sh
 	umask 002
 
 	cd() { builtin cd $@; ls; }

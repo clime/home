@@ -8,7 +8,14 @@ export WORKON_HOME=/var/www/envs
 alias vm='ssh 31.31.78.149'
 export vm='31.31.78.149'
 
-. ~/.cdlos
+# virtualenvwrapper
+if [[ $EUID -ne 0 ]]; then
+	export WORKON_HOME=~/www/envs
+	export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+	source virtualenvwrapper.sh
+fi
+
+#. ~/.cdlos
 #. ~/.cdcwu
 
 export PYTHONSTARTUP=~/.pythonrc
