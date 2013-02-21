@@ -17,6 +17,13 @@ umask 002
 
 source virtualenvwrapper.sh
 
+function cd { 
+	if [[ $EUID -ne 0 ]]; then
+		builtin cd $@; ls; 
+	else
+		builtin cd $@
+	fi
+}
 mkcd() { mkdir $1 && cd $1; }
 
 alias bshr='source ~/.bashrc'
