@@ -43,6 +43,8 @@ mvuuu() { mv $@ ../../../; }
 mvuuuu() { mv $@ ../../../../; }
 
 # git related:
+alias gpull='git pull'
+alias gpush='git push'
 alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
