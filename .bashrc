@@ -18,13 +18,7 @@ shopt -s direxpand
 
 umask 002
 
-alias vm='ssh 31.31.78.149'
-export vm='31.31.78.149'
-
-source /usr/bin/virtualenvwrapper.sh
-
-# for virtualenvwrapper
-export WORKON_HOME=/var/www/envs 
+source virtualenvwrapper.sh
 
 function cd { builtin cd $1; ls; }
 mkcd() { mkdir $1 && cd $1; }
@@ -65,7 +59,7 @@ alias gri='git rebase --interactive'
 alias gcp='git cherry-pick'
 alias grm='git rm'
 
-
-. ~/.cdlos
-#. ~/.cdcwu
-
+# source local definitions
+if [ -f	~/.local_bashrc ]; then
+	. ~/.local_bashrc
+fi

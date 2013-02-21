@@ -1,0 +1,12 @@
+# .bashrc
+
+export PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
+
+# for virtualenvwrapper
+export WORKON_HOME=/var/www/envs
+
+alias vm='ssh 31.31.78.149'
+export vm='31.31.78.149'
+
+. ~/.cdlos
+#. ~/.cdcwu
