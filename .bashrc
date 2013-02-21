@@ -21,6 +21,7 @@ export PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\]
 export PATH=$PATH:./
 
 alias bshr='source ~/.bashrc'
+alias svim='sudo vim'
 
 alias lla='ll -a'
 alias lsa='ls -a'
