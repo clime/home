@@ -14,3 +14,5 @@ export vm='31.31.78.149'
 export PYTHONSTARTUP=~/.pythonrc
 
 shopt -s direxpand
+
+function cd { builtin cd $1; ls; }
