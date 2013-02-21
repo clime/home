@@ -1,0 +1,12 @@
+# pack-refs with: peeled 
+70eba584a80b689eec266c69a04d460e7dee3133 refs/remotes/origin/blame_color
+2723a1116f352dc3690b653bdb534f9481e71850 refs/remotes/origin/buffer_path
+ea7b1ab602230ff9f167864f78a3785c52ae2bd8 refs/remotes/origin/copied
+ff32149a59f9ba6d1b8067e39cc823c99178cb29 refs/remotes/origin/http_github_fi
+cf3fe781dd7584630fee2cb02a7e2678511c6b72 refs/remotes/origin/master
+5c83b06248a3d254e398e6c6f2ea98eca7d5a25d refs/tags/v1.0
+^190d8f6647671d429c591eb6aa020a6320f48d20
+ddca99b0e801d9c697ea8d71409376bb0f787703 refs/tags/v1.1
+^ccfc60e550d3b6c2ea98502a373569a028f24277
+f1fa47c30a8a07320ca67b374a770740a53ff5c2 refs/tags/v1.2
+^f112f9b830a8f42375183c9a47965270ae8b3ae4
