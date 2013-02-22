@@ -20,6 +20,8 @@ set -o vi
 export PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
 export PATH=$PATH:./
 
+bind '"\t":menu-complete'
+
 alias bshr='source ~/.bashrc'
 alias svim='sudo vim'
 
@@ -72,3 +74,4 @@ wwwperm() {
 if [ -f	~/.local_bashrc ]; then
 	. ~/.local_bashrc
 fi
+
