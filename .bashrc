@@ -22,6 +22,9 @@ export PATH=$PATH:./
 
 bind '"\t":menu-complete'
 
+stty werase undef
+bind '"\C-w": unix-filename-rubout'
+
 alias bshr='source ~/.bashrc'
 alias svim='sudo vim'
 
