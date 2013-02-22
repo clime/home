@@ -26,6 +26,8 @@ alias svim='sudo vim'
 alias lla='ll -a'
 alias lsa='ls -a'
 
+alias cdwww='cd /srv/www/'
+
 alias cdu='cd ../'
 alias cduu='cd ../../'
 alias cduuu='cd ../../../'
