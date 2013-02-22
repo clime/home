@@ -6,6 +6,6 @@
 !.Xmodmap
 !.pylintrc
 !.pythonrc
-!.tmpl_local_bashrc
+!.local_bashrc_tmpl
 !.gitignore
 !.inputrc
