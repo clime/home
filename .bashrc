@@ -61,6 +61,11 @@ alias gri='git rebase --interactive'
 alias gcp='git cherry-pick'
 alias grm='git rm'
 
+wwwperm() {
+	sudo find . .[^.]* -type d -print0 | xargs -0 sudo chmod 775
+	sudo find . .[^.]* -type f -print0 | xargs -0 sudo chmod 664
+}
+
 # source local definitions
 if [ -f	~/.local_bashrc ]; then
 	. ~/.local_bashrc
