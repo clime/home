@@ -48,6 +48,8 @@ nnoremap <space> za
 let @c='^df,Op==$x^iself.ly$$a = pj' " a, b, -> self.a = a<NL>self.b = b
 
 "------- custom mappings -------
+" <C-v> is normally used for literal 
+" inserting of the following character
 inoremap <C-v> <F10><C-r>+<F10>
 vnoremap <C-c> "+y
 nmap <F10> <F10>i
