@@ -11,7 +11,7 @@ set incsearch       " do incremental searching
 set sts=4           " allows backspacing four spaces at once
 set ts=4
 set sw=4
-set noet
+set et
 set nobk            " no backup files (file~)
 set ai
 set wildmenu
@@ -45,7 +45,7 @@ nnoremap <space> za
 "au BufWinEnter * silent! loadview
 
 "------- macros -------
-let @c='^df,Op==$x^iself.ly$$a = pj' " a, b, -> self.a = a<NL>self.b = b
+let @c='^df,Op==$x^iself.ly$$a = pj' " a, b, --> self.a = a<NL>self.b = b
 
 "------- custom mappings -------
 inoremap <C-v> <F10><C-r>+<F10>

@@ -10,7 +10,7 @@ if [ -e /usr/bin/vimx ]; then
 fi
 
 if [[ $EUID -ne 0 ]]; then
-	# non-root onlY:
+	# non-root only:
 	umask 002
 
 	cd() { builtin cd $@; ls; }
