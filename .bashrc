@@ -10,7 +10,7 @@ if [ -e /usr/bin/vimx ]; then
 fi
 
 if [[ $EUID -ne 0 ]]; then
-	# non-root onlY:
+	# non-root only:
 	umask 002
 
 	cd() { builtin cd $@; ls; }
@@ -24,6 +24,7 @@ bind '"\t":menu-complete'
 
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
+bind '"\C-x": unix-filename-rubout'
 
 alias bshr='source ~/.bashrc'
 alias svim='sudo vim'
