@@ -69,8 +69,7 @@ alias gcp='git cherry-pick'
 alias grm='git rm'
 
 wwwperm() {
-	sudo find . .[^.]* -type d -print0 | xargs -0 sudo chmod 775
-	sudo find . .[^.]* -type f -print0 | xargs -0 sudo chmod 664
+	sudo find . .[^.]* -print0 | xargs -0 sudo chmod u+wr,g+wr,o-w
 }
 
 # source local definitions
