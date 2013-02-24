@@ -15,7 +15,7 @@ if [[ $EUID -ne 0 ]]; then
 
 	cd() { builtin cd $@; ls; }
 fi
-	
+
 set -o vi
 export PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
 export PATH=$PATH:./
@@ -26,8 +26,10 @@ stty werase undef
 bind '"\C-w": unix-filename-rubout'
 bind '"\C-x": unix-filename-rubout'
 
-alias bshr='source ~/.bashrc'
-alias svim='sudo vim'
+alias soba='source ~/.bashrc'
+
+alias suvim='sudo vim'
+alias sutail='sudo tail'
 
 alias lla='ll -a'
 alias lsa='ls -a'
@@ -72,6 +74,14 @@ alias grm='git rm'
 wwwperm() {
 	sudo find . .[^.]* -print0 | xargs -0 sudo chmod u+wr,g+wr,o-w
 }
+
+alias sudo-emperor-start='sudo initctl start uwsgi'
+alias sudo-emperor-restart='sudo initctl restart uwsgi'
+alias sudo-emperor-stop='sudo initctl stop uwsgi'
+alias sudo-emperor-reload='sudo /usr/local/bin/uwsgi --reload /var/run/uwsgi/emperor.pid'
+alias sudo-uwsgi-stop='sudo /usr/local/bin/uwsgi --stop'
+alias sudo-uwsgi-reload='sudo /usr/local/bin/uwsgi --reload'
+alias sudo-uwsgi-top='sudo /usr/local/bin/uwsgitop'
 
 # source local definitions
 if [ -f	~/.local_bashrc ]; then
