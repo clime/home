@@ -15,9 +15,9 @@ if [[ $EUID -ne 0 ]]; then
 
 	cd() { 
         builtin cd $@; 
-        if [ -f .runenv ]; then
-            . .runenv
-        fi
+        #if [ -f .runenv ]; then
+            #. .runenv
+        #fi
         ls; 
     }
 fi
