@@ -38,6 +38,9 @@ let python_highlight_all = 1
 "TODO map this:
 ":noautocmd vimgrep /TODO/ **/*.py
 
+"------- xmledit -------
+let xml_tag_completion_map = ">>"
+
 "------- folding -------
 nnoremap <space> za
 
@@ -146,7 +149,7 @@ let g:AutoPairsMapCR = 1    " breaks compatibility with some plugins
 let g:AutoPairsShortcutBackInsert = '<C-b>' " alt mappings do not work with kde-console
 
 "------- set filetype django templates -------
-autocmd BufRead,BufNewFile *.dhtml set filetype=htmldjango
+autocmd BufRead,BufNewFile *.html set filetype=htmldjango
 
 "------ updating titles on kde-konsole tabs -------
 au BufEnter,WinEnter * let $vim_filename=expand("%:t:r")|let $vim_dirname=expand("%:p:h:t")|silent !echo -ne "\033]30;$vim_dirname/$vim_filename\007"

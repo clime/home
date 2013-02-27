@@ -20,7 +20,7 @@ set -o vi
 export PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
 export PATH=$PATH:./
 
-bind '"\t":menu-complete'
+#bind '"\t":menu-complete'
 
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
@@ -33,8 +33,6 @@ alias sutail='sudo tail'
 
 alias lla='ll -a'
 alias lsa='ls -a'
-
-alias cdwww='cd /srv/www/'
 
 alias cdu='cd ../'
 alias cduu='cd ../../'

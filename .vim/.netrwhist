@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/clime/.vim/ftplugin'
-let g:netrw_dirhist_2='/home/clime/.vim/bundle/syntastic/autoload'
-let g:netrw_dirhist_3='/home/clime/.vim/bundle/quicktask'
-let g:netrw_dirhist_4='/home/clime/.vim'
-let g:netrw_dirhist_5='/home/clime/.vim/bundle/syntastic/syntax_checkers/python'
-let g:netrw_dirhist_6='/home/clime/.vim'
-let g:netrw_dirhist_7='/home/clime/.vim/ftplugin'
-let g:netrw_dirhist_8='/home/clime/.local'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/srv/www/novacek/reqs-patches'
+let g:netrw_dirhist_2='/srv/www/novacek/web/templates'
+let g:netrw_dirhist_3='/srv/www/novacek/web/static/web/js/plugins/html5shiv/build'
