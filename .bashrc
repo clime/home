@@ -13,7 +13,13 @@ if [[ $EUID -ne 0 ]]; then
 	# non-root only:
 	umask 002
 
-	cd() { builtin cd $@; ls; }
+	cd() { 
+        builtin cd $@; 
+        if [ -f .runenv ]; then
+            . .runenv
+        fi
+        ls; 
+    }
 fi
 
 set -o vi
