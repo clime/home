@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/srv/www/novacek/reqs-patches'
 let g:netrw_dirhist_2='/srv/www/novacek/web/templates'
 let g:netrw_dirhist_3='/srv/www/novacek/web/static/web/js/plugins/html5shiv/build'
+let g:netrw_dirhist_4='/srv/www/loserti/reqs-patches'
