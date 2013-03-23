@@ -9,6 +9,10 @@ if [ -e /usr/bin/vimx ]; then
 	alias vim='/usr/bin/vimx'; # vim with +xterm_clipboard
 fi
 
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 if [[ $EUID -ne 0 ]]; then
 	# non-root only:
 	umask 002
