@@ -11,7 +11,7 @@ set incsearch       " do incremental searching
 set sts=4           " allows backspacing four spaces at once
 set ts=4
 set sw=4
-set et
+set noet
 set nobk            " no backup files (file~)
 set ai
 set wildmenu
