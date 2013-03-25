@@ -159,7 +159,7 @@ hi Special      guifg=#9999aa       guibg=NONE          gui=bold
             \   ctermfg=lightgray   ctermbg=NONE        cterm=bold
 
 hi Underlined   guifg=#80a0ff       guibg=NONE          gui=underline
-            \   ctermfg=NONE        ctermbg=NONE        cterm=underline
+            \   ctermfg=NONE        ctermbg=NONE        cterm=NONE
             \   term=underline 
 
 hi Ignore       guifg=#888888       guibg=NONE          gui=NONE
