@@ -84,7 +84,10 @@ wwwperm() {
 }
 
 alias sudo-emperor-start='sudo initctl start uwsgi'
-alias sudo-emperor-restart='sudo initctl restart uwsgi'
+# there is a problem with restating emperor that vassals 
+# remove pid files of new emperor instance (vacuum option)
+# you need to stop, wait, and start
+#alias sudo-emperor-restart='sudo initctl restart uwsgi'
 alias sudo-emperor-stop='sudo initctl stop uwsgi'
 alias sudo-emperor-reload='sudo /usr/local/bin/uwsgi --reload /var/run/uwsgi/emperor.pid'
 alias sudo-uwsgi-stop='sudo /usr/local/bin/uwsgi --stop'
