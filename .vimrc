@@ -170,3 +170,6 @@ autocmd FileType python,html,htmldjango,css,javascript autocmd BufWritePre <buff
 	"exec "imap \e".c." <A-".c.">"
 	"let c = nr2char(1+char2nr(c))
 "endw
+
+"------- nginx syntax file -------
+au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
