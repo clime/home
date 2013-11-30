@@ -81,8 +81,8 @@ alias gcp='git cherry-pick'
 alias grm='git rm'
 
 wwwperm() {
-	sudo find . -type d -print0 | xargs -0 -n100 sudo chmod 775
-	sudo find . -type f -print0 | xargs -0 -n100 sudo chmod 664
+	sudo find . -type d -print0 | xargs -0 -n100 sudo chmod ug+rwx,o+rx,o-w
+	sudo find . -type f -print0 | xargs -0 -n100 sudo chmod ug+rw,o+r,o-wx
 }
 
 alias sudo-emperor-start='sudo initctl start uwsgi'

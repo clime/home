@@ -9,3 +9,4 @@
 !.local_bashrc_tmpl
 !.gitignore
 !.inputrc
+.vim/.netrwhist

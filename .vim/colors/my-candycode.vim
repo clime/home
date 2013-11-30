@@ -132,7 +132,7 @@ hi WarningMsg   guifg=#ccae22       guibg=NONE          gui=bold
 " syntax highlighting groups (:help group-name) {{{
 
 hi Comment      guifg=#ff9922       guibg=NONE          gui=NONE
-            \   ctermfg=cyan   ctermbg=NONE        cterm=bold
+            \   ctermfg=cyan        ctermbg=NONE        cterm=bold
 
 hi Constant     guifg=#ff6050       guibg=NONE          gui=NONE
             \   ctermfg=red         ctermbg=NONE        cterm=NONE
@@ -150,7 +150,7 @@ hi Statement    guifg=#66d077       guibg=NONE          gui=bold
             \   ctermfg=brown       ctermbg=NONE        cterm=bold
 
 hi PreProc      guifg=#bb88dd       guibg=NONE          gui=NONE
-            \   ctermfg=darkmagenta ctermbg=NONE        cterm=NONE
+            \   ctermfg=magenta     ctermbg=NONE        cterm=NONE
 
 hi Type         guifg=#4093cc       guibg=NONE          gui=bold
             \   ctermfg=lightblue   ctermbg=NONE        cterm=bold
