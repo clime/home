@@ -106,3 +106,6 @@ function sudo-uwsgi-stop() {
 if [ -f	~/.local_bashrc ]; then
 	. ~/.local_bashrc
 fi
+
+# find lately modified files
+# find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head
