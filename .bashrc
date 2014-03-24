@@ -92,9 +92,15 @@ alias sudo-emperor-start='sudo initctl start uwsgi'
 #alias sudo-emperor-restart='sudo initctl restart uwsgi'
 alias sudo-emperor-stop='sudo initctl stop uwsgi'
 alias sudo-emperor-reload='sudo /usr/local/bin/uwsgi --reload /var/run/uwsgi/emperor.pid'
-alias sudo-uwsgi-stop='sudo /usr/local/bin/uwsgi --stop'
-alias sudo-uwsgi-reload='sudo /usr/local/bin/uwsgi --reload'
 alias sudo-uwsgi-top='sudo /usr/local/bin/uwsgitop'
+
+function sudo-uwsgi-reload() {
+	sudo /usr/local/bin/uwsgi --reload "/var/run/uwsgi/$1.pid";
+}
+
+function sudo-uwsgi-stop() {
+	sudo /usr/local/bin/uwsgi --stop "/var/run/uwsgi/$1.pid";
+}
 
 # source local definitions
 if [ -f	~/.local_bashrc ]; then
