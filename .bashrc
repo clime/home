@@ -28,7 +28,7 @@ fi
 
 set -o vi
 export PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
-export PATH=$PATH:./
+PATH=$PATH:./:/usr/local/bin
 export GREP_OPTIONS='--color=auto'
 
 #bind '"\t":menu-complete'

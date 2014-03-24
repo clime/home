@@ -4,8 +4,8 @@ export PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\]
 
 # virtualenvwrapper
 if [[ $EUID -ne 0 ]]; then
-	export WORKON_HOME=/srv/www/envs
-	export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+	WORKON_HOME=/srv/www/envs
+	VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 	source virtualenvwrapper.sh
 fi
 
@@ -13,7 +13,7 @@ fi
 #. ~/.cdlos
 #. ~/.cdcwu
 
-export PYTHONSTARTUP=~/.pythonrc
+PYTHONSTARTUP=~/.pythonrc
 
 shopt -s direxpand
 shopt -s dotglob
