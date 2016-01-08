@@ -28,7 +28,7 @@ fi
 
 set -o vi
 PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
-PATH=$PATH:./:/usr/local/bin
+PATH=$PATH:./:/usr/local/bin:~/scripts/
 GREP_OPTIONS='--color=auto'
 
 #bind '"\t":menu-complete'
@@ -36,6 +36,8 @@ GREP_OPTIONS='--color=auto'
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
 bind '"\C-x": unix-filename-rubout'
+bind '"\C-k": history-search-backward'
+bind '"\C-j": history-search-forward'
 
 alias soba='source ~/.bashrc'
 
@@ -109,3 +111,5 @@ fi
 
 # find lately modified files
 # find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head
+
+alias clime.cz='ssh -p 1022 clime.cz'

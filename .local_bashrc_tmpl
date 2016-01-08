@@ -9,7 +9,7 @@ if [[ $EUID -ne 0 ]]; then
 	source virtualenvwrapper.sh
 fi
 
-. ~/.cdwww
+#. ~/.cdwww
 #. ~/.cdlos
 #. ~/.cdcwu
 

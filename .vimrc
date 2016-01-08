@@ -23,6 +23,8 @@ set noswf
 set tags=
 set formatoptions+=r
 set timeout ttimeoutlen=50
+set ignorecase
+set smartcase
 colorscheme my-candycode
 
 set clipboard=unnamedplus " yanking to/pasting from system clipboard!
@@ -40,6 +42,9 @@ let python_highlight_all = 1
 
 "------- xmledit -------
 let xml_tag_completion_map = ">>"
+
+"------- visual search -------
+vnoremap // y/<C-R>"<CR>
 
 "------- folding -------
 nnoremap <space> za
