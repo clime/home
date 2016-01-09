@@ -19,8 +19,8 @@ set nohls
 set keywordprg=man\ -a
 set visualbell t_vb=
 set pastetoggle=<F10>
+set tags=.tags;/
 set noswf
-set tags=
 set formatoptions+=r
 set timeout ttimeoutlen=50
 set ignorecase
@@ -100,7 +100,8 @@ autocmd BufNewFile,BufRead *.qtask setf quicktask
 "let g:syntastic_enable_signs=0
 let g:syntastic_python_checkers = ['pyflakes']
 "let g:syntastic_python_checkers = ['pylint']
-
+let g:syntastic_always_populate_loc_list = 1
+"
 "------- pathogen -------
 call pathogen#infect()
 call pathogen#helptags()
@@ -178,3 +179,21 @@ autocmd FileType python,html,htmldjango,css,javascript autocmd BufWritePre <buff
 
 "------- nginx syntax file -------
 au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+"
+"------- nginx syntax file -------
+au BufRead,BufNewFile *.py set tags+=/usr/lib/python2.7/site-packages/tags
+
+"------- autoload cscope -------
+function! LoadCscope()
+  let db = findfile(".cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/.cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
+
+"------- should not be needed -------
+source ~/.vim/autoload/cscope_maps.vim
