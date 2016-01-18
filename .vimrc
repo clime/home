@@ -177,8 +177,11 @@ autocmd FileType python,html,htmldjango,css,javascript autocmd BufWritePre <buff
 	"let c = nr2char(1+char2nr(c))
 "endw
 
+"------- ini syntax -------
+au BufNewFile,BufRead *.ini,*.conf,*/.hgrc,*/.hg/hgrc set ft=ini
+
 "------- nginx file syntax -------
-au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/nginx/conf/* if &ft == '' | set ft=nginx | endif
+au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/nginx/conf/* set ft=nginx
 "
 "------- site-packages python tags -------
 au BufRead,BufNewFile *.py set tags+=/usr/lib/python2.7/site-packages/tags
