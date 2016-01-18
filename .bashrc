@@ -112,4 +112,7 @@ fi
 # find lately modified files
 # find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head
 
-alias clime.cz='ssh -p 1022 clime.cz'
+alias climecz='ssh -p 1022 clime.cz'
+
+alias p2packs='cd /usr/lib/python2.7/site-packages'
+export p2packs=/usr/lib/python2.7/site-packages

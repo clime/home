@@ -177,11 +177,14 @@ autocmd FileType python,html,htmldjango,css,javascript autocmd BufWritePre <buff
 	"let c = nr2char(1+char2nr(c))
 "endw
 
-"------- nginx syntax file -------
-au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+"------- nginx file syntax -------
+au BufRead,BufNewFile /etc/nginx/*,/etc/nginx/conf.d/*,/usr/local/nginx/conf/* if &ft == '' | set ft=nginx | endif
 "
-"------- nginx syntax file -------
+"------- site-packages python tags -------
 au BufRead,BufNewFile *.py set tags+=/usr/lib/python2.7/site-packages/tags
+
+"------- ansible syntax for yml files -------
+au BufRead,BufNewFile *.yml set ft=ansible
 
 "------- autoload cscope -------
 function! LoadCscope()
@@ -197,3 +200,6 @@ au BufEnter /* call LoadCscope()
 
 "------- should not be needed -------
 source ~/.vim/autoload/cscope_maps.vim
+
+"------- open tag in a new tab -------
+nmap <silent><Leader><C-]> <C-w><C-]><C-w>T<Space>
