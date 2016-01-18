@@ -87,21 +87,23 @@ wwwperm() {
 	sudo find . -type f -print0 | xargs -0 -n100 sudo chmod ug+rw,o+r,o-wx
 }
 
+export UWSGI_BINPATH='/usr/local/bin/uwsgi'
+
 alias sudo-emperor-start='sudo initctl start uwsgi'
 # there is a problem with restating emperor that vassals 
 # remove pid files of new emperor instance (vacuum option)
 # you need to stop, wait, and start
 #alias sudo-emperor-restart='sudo initctl restart uwsgi'
 alias sudo-emperor-stop='sudo initctl stop uwsgi'
-alias sudo-emperor-reload='sudo /usr/local/bin/uwsgi --reload /var/run/uwsgi/emperor.pid'
+alias sudo-emperor-reload='sudo $UWSGI_BINPATH --reload /var/run/uwsgi/emperor.pid'
 alias sudo-uwsgi-top='sudo /usr/local/bin/uwsgitop'
 
 function sudo-uwsgi-reload() {
-	sudo /usr/local/bin/uwsgi --reload "/var/run/uwsgi/$1.pid";
+	sudo $UWSGI_BINPATH --reload "/var/run/uwsgi/$1.pid";
 }
 
 function sudo-uwsgi-stop() {
-	sudo /usr/local/bin/uwsgi --stop "/var/run/uwsgi/$1.pid";
+	sudo $UWSGI_BINPATH --stop "/var/run/uwsgi/$1.pid";
 }
 
 # source local definitions
@@ -116,3 +118,9 @@ alias climecz='ssh -p 1022 clime.cz'
 
 alias p2packs='cd /usr/lib/python2.7/site-packages'
 export p2packs=/usr/lib/python2.7/site-packages
+
+function echologs() {
+	sudo journalctl -xe -u $*
+}
+
+export ANSIBLE_KEEP_REMOTE_FILES=1
