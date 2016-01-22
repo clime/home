@@ -96,9 +96,13 @@ cnoremap <expr> <C-j> EnterSubdir()
 autocmd BufNewFile,BufRead *.qtask setf quicktask
 
 "------- syntastic -------
+"let g:syntastic_python_python_exec = '/usr/bin/python3'
 "let g:syntastic_quiet_warnings=1
 "let g:syntastic_enable_signs=0
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = []
+"let g:syntastic_python_checkers = ['pyflakes']
+"let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
 "let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_always_populate_loc_list = 1
 "
@@ -144,6 +148,8 @@ let g:jedi#auto_vim_configuration = 0
 let g:jedi#popup_on_dot = 0
 "let g:jedi#show_function_definition = 0
 "let g:jedi#auto_initialization = 0
+hi jediFunction term=NONE cterm=NONE ctermfg=6 guifg=gray7 gui=NONE ctermbg=0 guibg=HotPink
+hi jediFat term=bold,underline cterm=bold,underline gui=bold,underline ctermbg=0 guibg=HotPink
 
 "------- autopairs -------
 " autopairs is troublesome but I kinda like it

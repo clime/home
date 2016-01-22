@@ -106,21 +106,24 @@ function sudo-uwsgi-stop() {
 	sudo $UWSGI_BINPATH --stop "/var/run/uwsgi/$1.pid";
 }
 
+export ANSIBLE_KEEP_REMOTE_FILES=1
+
+# find lately modified files
+alias latestmods="find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head"
+
+alias climecz='ssh -p 1022 clime.cz'
+
+alias p2packs='cd /usr/lib/python2.7/site-packages'
+export p2packs=/usr/lib/python3.4/site-packages
+alias p3packs='cd /usr/lib/python2.7/site-packages'
+export p3packs=/usr/lib/python3.4/site-packages
+
+alias sysctl="sudo systemctl"
+alias syslog="sudo journalctl -xe -u"
+
 # source local definitions
 if [ -f	~/.local_bashrc ]; then
 	. ~/.local_bashrc
 fi
 
-# find lately modified files
-# find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head
-
-alias climecz='ssh -p 1022 clime.cz'
-
-alias p2packs='cd /usr/lib/python2.7/site-packages'
-export p2packs=/usr/lib/python2.7/site-packages
-
-function echologs() {
-	sudo journalctl -xe -u $*
-}
-
-export ANSIBLE_KEEP_REMOTE_FILES=1
+source scripts/.alias_autocomplete.sh
