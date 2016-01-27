@@ -126,6 +126,8 @@ alias syslog="sudo journalctl -xe -u"
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
 
+alias mk='make'
+
 # source local definitions
 if [ -f	~/.local_bashrc ]; then
 	. ~/.local_bashrc
