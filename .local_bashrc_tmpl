@@ -17,3 +17,12 @@ PYTHONSTARTUP=~/.pythonrc
 
 shopt -s direxpand
 shopt -s dotglob
+
+alias coprbedev='ssh copr-be-dev.cloud.fedoraproject.org'
+alias coprfedev='ssh copr-fe-dev.cloud.fedoraproject.org'
+alias coprbe='ssh copr-be.cloud.fedoraproject.org'
+alias coprfe='ssh copr-fe.cloud.fedoraproject.org'
+export coprbedev=copr-be-dev.cloud.fedoraproject.org
+export coprfedev=copr-fe-dev.cloud.fedoraproject.org
+export coprbe=copr-be.cloud.fedoraproject.org
+export coprfe=copr-fe.cloud.fedoraproject.org
