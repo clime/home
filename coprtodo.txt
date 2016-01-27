@@ -1,0 +1,28 @@
+================================================================= TODO =================================================================
+Place a new version of copr-cli into fedora-updates repository or ask Mirek to do it :-). 
+There should be version 1.46 there because of "ImportError: No module named exceptions" in 1.45
+
+Investigate for copr-cli (or python-copr): copr_url = https://copr-fe-dev.cloud.fedoraproject.org gives Error: [SSL: CERTIFICATE_VERIFY_FAILED] 
+certificate verify failed (_ssl.c:590) in ~/.config/copr
+
+There was the following err during upgrade of copr-selinux
+	Upgrading   : copr-selinux-1.37-1.git.0.1511613.fc23.noarch                                                                       
+		21    /48 Unable to resolve name: system_u
+		Failed to resolve filecon statement at 1 of /var/lib/selinux/mls/tmp/modules/400/copr/cil
+		Failed to resolve ast
+		/usr/sbin/semodule:  Failed!
+Investigate!
+
+Unless I put 8.8.8.8 to dns server list, openid auth does not work :-(. Why?
+
+Ask Adam: for vagrant distgit (centos7), policycoreutils-python (for semanage cmd in Vagrantfile), which are not installed by default. 
+Should this be as specified as a build dependency in .spec file?  Btw. on fedora semanage is provided by a different package called 
+policycoreutils-python-utils.
+
+On copr-dist-git, there was a problem that copr-service was not in mock group and therefore it could not run mock. The reason might be
+that copr-dist-git.spec does not add copr-service and copr-dist-git users. Shouldn't it? See Vagrantfile for distgit.
+
+How to use ssh for host: localhost when using ansible-playbook?
+
+================================================================= DONE =================================================================
+Change status of the my first three assigned bugs on bugzilla when possible.

@@ -1,0 +1,46 @@
+================================================================= TODO =================================================================
+Look at this if the update does not cause slower sudo su:
+	Upgraded   kf5-kwallet-5.18.0-1.fc23.x86_64                               @updates
+	Upgrade                5.18.0-2.fc23.x86_64                               @updates
+	Upgraded   kf5-kwallet-libs-5.18.0-1.fc23.x86_64                          @updates
+	Upgrade                     5.18.0-2.fc23.x86_64                          @updates
+	Upgraded   krb5-libs-1.14-4.fc23.x86_64                                   (unknown)
+	Upgrade              1.14-5.fc23.x86_64                                   @updates
+	Upgraded   krb5-workstation-1.14-4.fc23.x86_64                            (unknown)
+	Upgrade                     1.14-5.fc23.x86_64                            @updates
+ 
+sudo vim doesn't share clipboard with the rest of the system. Why?
+
+prunerepo.noarch: W: spelling-error Summary(en_US) md -> MD, Md, ms
+prunerepo.noarch: W: spelling-error %description -l en_US rpms -> rpm, rps, rems
+prunerepo.noarch: W: spelling-error %description -l en_US srpms -> PMS
+prunerepo.noarch: W: spelling-error %description -l en_US filesystem -> file system, file-system, systemically
+prunerepo.noarch: W: spelling-error %description -l en_US md -> MD, Md, ms
+prunerepo.noarch: W: spelling-error %description -l en_US metadata -> meta data, meta-data, metatarsal
+prunerepo.noarch: W: spelling-error %description -l en_US createrepo -> procreate, repeater
+prunerepo.noarch: W: no-url-tag
+prunerepo.src: W: spelling-error Summary(en_US) md -> MD, Md, ms
+prunerepo.src: W: spelling-error %description -l en_US rpms -> rpm, rps, rems
+prunerepo.src: W: spelling-error %description -l en_US srpms -> PMS
+prunerepo.src: W: spelling-error %description -l en_US filesystem -> file system, file-system, systemically
+prunerepo.src: W: spelling-error %description -l en_US md -> MD, Md, ms
+prunerepo.src: W: spelling-error %description -l en_US metadata -> meta data, meta-data, metatarsal
+prunerepo.src: W: spelling-error %description -l en_US createrepo -> procreate, repeater
+prunerepo.src: W: no-url-tag
+prunerepo.src: W: invalid-url Source0: prunerepo-1.1.tar.gz
+2 packages and 0 specfiles checked; 0 errors, 17 warnings.
+
+Update ID: FEDORA-2016-a787b58577
+Release: Fedora 23
+ Status: pending
+   Type: newpackage
+  Karma: 0
+Request: testing
+  Notes: New package
+Submitter: clime
+Submitted: 2016-01-26 15:48:56
+Comments: bodhi - 2016-01-26 15:48:56 (karma 0)
+		 This update has been submitted for testing by clime.
+https://bodhi.fedoraproject.org/updates/FEDORA-2016-a787b58577
+
+================================================================= DONE =================================================================
