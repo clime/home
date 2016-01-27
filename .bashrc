@@ -127,6 +127,7 @@ alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
 
 alias mk='make'
+alias testbox='make -f ~/docker/clime/Makefile sh'
 
 # source local definitions
 if [ -f	~/.local_bashrc ]; then

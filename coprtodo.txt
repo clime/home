@@ -24,5 +24,8 @@ that copr-dist-git.spec does not add copr-service and copr-dist-git users. Shoul
 
 How to use ssh for host: localhost when using ansible-playbook?
 
+There is some problem with docker run -d and docker exec -it bash -> gpgme.GpgmeError: (7, 32870, 'Inappropriate ioctl for device') when trying to get package from
+a newly enabled repo for which a key has not be downloaded yet.
+
 ================================================================= DONE =================================================================
 Change status of the my first three assigned bugs on bugzilla when possible.

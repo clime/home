@@ -34,10 +34,17 @@ RUN setcap cap_net_raw,cap_net_admin+p /usr/bin/ping
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -q
 
 RUN echo 'root:passwd' | chpasswd
-RUN mkdir /root/.ssh &&  chmod 700 /root /root/.ssh
-RUN ssh-keygen -f /root/.ssh/id_rsa -N '' -q
-RUN touch /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys
-RUN cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
+WORKDIR /root/
+RUN git init
+RUN git remote add origin https://github.com/clime/home.git
+RUN git fetch
+RUN git reset --hard origin/master
+RUN mkdir .ssh &&  chmod 700 . .ssh
+RUN ssh-keygen -f .ssh/id_rsa -N '' -q
+RUN touch .ssh/authorized_keys && chmod 600 ./.ssh/authorized_keys
+RUN cat .ssh/id_rsa.pub >> ./.ssh/authorized_keys
+RUN cp .local_bashrc_tmpl .local_bashrc
+RUN echo 'export PS1="\[\e[31;1m\]\u\[\e[31;1m\]@\[\e[31;1m\]\h \[\e[0;1m\]\w\[\e[31;1m\] $ \[\e[0m\]"' > .local_bashrc
 
 RUN useradd clime
 RUN echo 'clime:passwd' | chpasswd
@@ -55,7 +62,5 @@ RUN cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 RUN cp .local_bashrc_tmpl .local_bashrc
 RUN echo 'export PS1="\[\e[33;1m\]\u\[\e[36;1m\]@\[\e[36;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]"' > .local_bashrc
 RUN chown clime:clime -R .
-
-RUN echo 'testbox' > /etc/hostname
 
 CMD ["/usr/sbin/init"]
