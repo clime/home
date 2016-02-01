@@ -116,8 +116,8 @@ function latestmods { # todo
 alias climecz='ssh -p 1022 clime.cz'
 
 alias p2packs='cd /usr/lib/python2.7/site-packages'
-export p2packs=/usr/lib/python3.4/site-packages
-alias p3packs='cd /usr/lib/python2.7/site-packages'
+export p2packs=/usr/lib/python2.7/site-packages
+alias p3packs='cd /usr/lib/python3.4/site-packages'
 export p3packs=/usr/lib/python3.4/site-packages
 
 alias sysctl="sudo systemctl"

@@ -28,7 +28,7 @@ RUN dnf -y install dnf-plugins-core
 RUN dnf -y install psmisc
 RUN dnf -y install python-jedi
 
-RUN export LANG=en_US.UTF-8
+RUN export LANG=en_US.utf8
 RUN setcap cap_net_raw,cap_net_admin+p /usr/bin/ping
 
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -q
@@ -62,5 +62,7 @@ RUN cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 RUN cp .local_bashrc_tmpl .local_bashrc
 RUN echo 'export PS1="\[\e[33;1m\]\u\[\e[36;1m\]@\[\e[36;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]"' > .local_bashrc
 RUN chown clime:clime -R .
+
+RUN localectl set-locale LANG=en_US.utf8 # is this doing anything?
 
 CMD ["/usr/sbin/init"]

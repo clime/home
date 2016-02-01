@@ -211,4 +211,9 @@ au BufEnter /* call LoadCscope()
 source ~/.vim/autoload/cscope_maps.vim
 
 "------- open tag in a new tab -------
-nmap <silent><Leader><C-]> <C-w><C-]><C-w>T<Space>
+nmap <silent><leader><C-]> <C-w><C-]><C-w>T<Space>
+
+"------- scrollwheel -------
+" TODO: does not work:
+map <ScrollWheelUp> <C-U>
+map <ScrollWheelDown> <C-D>
