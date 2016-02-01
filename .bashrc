@@ -134,4 +134,4 @@ if [ -f	~/.local_bashrc ]; then
 	. ~/.local_bashrc
 fi
 
-source ~/scripts/.alias_autocomplete.sh
+source ~/scripts/alias_autocomplete.sh
