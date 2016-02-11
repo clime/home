@@ -113,13 +113,14 @@ function latestmods { # todo
 	find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head -n $1;
 }
 
-alias climecz='ssh -p 1022 clime.cz'
+alias clime.cz='ssh -p 1022 clime.cz'
 
 alias p2packs='cd /usr/lib/python2.7/site-packages'
 export p2packs=/usr/lib/python2.7/site-packages
 alias p3packs='cd /usr/lib/python3.4/site-packages'
 export p3packs=/usr/lib/python3.4/site-packages
 
+alias sysrst="sudo systemctl restart"
 alias sysctl="sudo systemctl"
 alias syslog="sudo journalctl -xe -u"
 
