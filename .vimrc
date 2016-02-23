@@ -209,6 +209,7 @@ au BufEnter /* call LoadCscope()
 
 "------- should not be needed -------
 source ~/.vim/autoload/cscope_maps.vim
+source ~/.vim/autoload/tab_numbers.vim
 
 "------- open tag in a new tab -------
 nmap <silent><leader><C-]> <C-w><C-]><C-w>T<Space>
@@ -217,3 +218,6 @@ nmap <silent><leader><C-]> <C-w><C-]><C-w>T<Space>
 " TODO: does not work:
 map <ScrollWheelUp> <C-U>
 map <ScrollWheelDown> <C-D>
+
+"------- custom filetypes autocmds -------
+autocmd BufNewFile,BufRead *.html set ts=2 sw=2
