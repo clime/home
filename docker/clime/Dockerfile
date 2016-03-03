@@ -64,5 +64,6 @@ RUN echo 'export PS1="\[\e[33;1m\]\u\[\e[36;1m\]@\[\e[36;1m\]\h \[\e[37;1m\]\w\[
 RUN chown clime:clime -R .
 
 RUN dnf -y install procps-ng
+rm /run/nologin
 
 CMD ["/usr/sbin/init"]
