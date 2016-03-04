@@ -62,8 +62,8 @@ RUN cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 RUN cp .local_bashrc_tmpl .local_bashrc
 RUN echo 'export PS1="\[\e[33;1m\]\u\[\e[36;1m\]@\[\e[36;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]"' > .local_bashrc
 RUN chown clime:clime -R .
-RUN echo 'sudo rm -f /run/nologin' >> .local_bashrc
 
 RUN dnf -y install procps-ng
+RUN dnf -y update
 
 CMD ["/usr/sbin/init"]
