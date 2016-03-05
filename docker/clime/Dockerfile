@@ -27,6 +27,7 @@ RUN dnf -y install openssh-server
 RUN dnf -y install dnf-plugins-core
 RUN dnf -y install psmisc
 RUN dnf -y install python-jedi
+RUN dnf -y install procps-ng
 
 RUN export LANG=en_US.utf8
 RUN setcap cap_net_raw,cap_net_admin+p /usr/bin/ping
@@ -46,7 +47,7 @@ RUN cat .ssh/id_rsa.pub >> ./.ssh/authorized_keys
 RUN cp .local_bashrc_tmpl .local_bashrc
 RUN echo 'export PS1="\[\e[31;1m\]\u\[\e[31;1m\]@\[\e[31;1m\]\h \[\e[0;1m\]\w\[\e[31;1m\] $ \[\e[0m\]"' > .local_bashrc
 
-RUN useradd clime
+RUN useradd -u 27960 clime
 RUN echo 'clime:passwd' | chpasswd
 RUN echo 'clime  ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers
 WORKDIR /home/clime
@@ -63,7 +64,6 @@ RUN cp .local_bashrc_tmpl .local_bashrc
 RUN echo 'export PS1="\[\e[33;1m\]\u\[\e[36;1m\]@\[\e[36;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]"' > .local_bashrc
 RUN chown clime:clime -R .
 
-RUN dnf -y install procps-ng
-RUN dnf -y update
+RUN dnf -y copr enable @copr/copr-dev
 
 CMD ["/usr/sbin/init"]
