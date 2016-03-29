@@ -1,0 +1,19 @@
+alias cdcopr='cd ~/copr/'
+alias cdc='cd ~/copr/'
+alias cdbe='cd ~/copr/backend'
+alias cdfe='cd ~/copr/frontend'
+alias cddbe='cd ~/copr/docker/backend'
+alias cdlog='cd /var/log/copr/'
+alias cdkg='cd ~/copr/keygen'
+alias cdmfe='cd ~/copr/mocks/frontend'
+alias cdbetest='cd ~/beaker/copr/Regression/backend'
+
+export cdcopr=~/copr/
+export cdc=~/copr/
+export cdbe=~/copr/backend
+export cdfe=~/copr/frontend
+export cddbe=~/copr/docker/backend
+export cdlog=/var/log/copr/
+export cdkg=~/copr/keygen
+export cdmfe='~/copr/mocks/frontend'
+export cdbetest='~/beaker/copr/Regression/backend'
