@@ -7,6 +7,7 @@ alias cdlog='cd /var/log/copr/'
 alias cdkg='cd ~/copr/keygen'
 alias cdmfe='cd ~/copr/mocks/frontend'
 alias cdtbe='cd ~/beaker/copr/Regression/backend'
+alias cdtdg='cd ~/beaker/copr/Regression/dist-git'
 
 export cdcopr=~/copr/
 export cdc=~/copr/
@@ -17,3 +18,4 @@ export cdlog=/var/log/copr/
 export cdkg=~/copr/keygen
 export cdmfe='~/copr/mocks/frontend'
 export cdtbe='~/beaker/copr/Regression/backend'
+export cdtdg='~/beaker/copr/Regression/dist-git'
