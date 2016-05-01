@@ -1,7 +1,9 @@
-.PHONY : build build1 run run1 sh sh1 start start1 stop stop1 del del1
+.PHONY : build run run1 sh sh1 start start1 stop stop1 del del1
 
 build:
 	docker build -t clime-image .
+
+bld: build
 
 run:
 	docker run \
@@ -28,9 +30,6 @@ stop:
 del:
 	docker rm -f clime$(tag)
 
-
-build1: tag = 1
-build1: build
 
 run1: tag = 1
 run1: run
