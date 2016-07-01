@@ -11,7 +11,6 @@ run:
 		-dit \
 		-v /sys/fs/cgroup:/sys/fs/cgroup:ro \
 		-v /home/clime/copr:/home/clime/copr \
-		-v /home/clime/beaker:/home/clime/beaker \
 		-v /home/clime/infra:/home/clime/infra \
 		--name="clime$(tag)" \
 		-h testbox$(tag) \
