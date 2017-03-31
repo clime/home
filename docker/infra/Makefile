@@ -1,7 +1,7 @@
 .PHONY : build run run1 sh sh1 start start1 stop stop1 del del1
 
 build:
-	docker build -t clime-image .
+	docker build -t infra-image .
 
 bld: build
 
@@ -11,24 +11,27 @@ run:
 		-dit \
 		-v /sys/fs/cgroup:/sys/fs/cgroup:ro \
 		-v /home/clime/copr:/home/clime/copr \
-		-v /home/clime/copr-flavor:/home/clime/copr-flavor \
 		-v /home/clime/infra:/home/clime/infra \
+		-v /home/clime/triage:/home/clime/triage \
 		-v /home/clime/rpmbuild:/home/clime/rpmbuild \
-		--name="clime$(tag)" \
-		clime-image
+		-v /home/clime/infra:/srv/web/infra/ansible \
+		-v /dev/vg:/dev/vg \
+		--name="infra$(tag)" \
+		-h infrabox$(tag) \
+		infra-image
 
 sh:
-	docker exec clime$(tag) rm -f /run/nologin
-	docker exec -u clime -it clime$(tag) script -qc 'bash' /dev/null
+	docker exec infra$(tag) rm -f setup-runtime.sh
+	docker exec -u clime -it infra$(tag) script -qc 'bash' /dev/null
 
 start:
-	docker start clime$(tag)
+	docker start infra$(tag)
 
 stop:
-	docker stop clime$(tag)
+	docker stop infra$(tag)
 
 del:
-	docker rm -f clime$(tag)
+	docker rm -f infra$(tag)
 
 
 run1: tag = 1

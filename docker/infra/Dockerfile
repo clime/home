@@ -14,6 +14,7 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME ["/sys/fs/cgroup"]
 
+RUN dnf -y install man
 RUN dnf -y install htop
 RUN dnf -y install tito
 RUN dnf -y install wget
@@ -29,7 +30,6 @@ RUN dnf -y install psmisc
 RUN dnf -y install python-jedi
 RUN dnf -y install procps-ng
 
-RUN export LANG=en_US.utf8
 RUN setcap cap_net_raw,cap_net_admin+p /usr/bin/ping
 
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -q
@@ -46,6 +46,7 @@ RUN touch .ssh/authorized_keys && chmod 600 ./.ssh/authorized_keys
 RUN cat .ssh/id_rsa.pub >> ./.ssh/authorized_keys
 RUN cp .local_bashrc_tmpl .local_bashrc
 RUN echo 'export PS1="\[\e[31;1m\]\u\[\e[31;1m\]@\[\e[31;1m\]\h \[\e[0;1m\]\w\[\e[31;1m\] $ \[\e[0m\]"' > .local_bashrc
+RUN echo 'alias cdfi="cd /srv/web/infra/ansible/"' >> .local_bashrc
 
 RUN useradd -u 27960 clime
 RUN echo 'clime:passwd' | chpasswd
@@ -65,5 +66,13 @@ RUN echo 'export PS1="\[\e[33;1m\]\u\[\e[36;1m\]@\[\e[36;1m\]\h \[\e[37;1m\]\w\[
 RUN chown clime:clime -R .
 
 RUN dnf -y copr enable @copr/copr
+
+RUN dnf -y install ansible
+RUN dnf -y install python-dnf
+RUN dnf -y install fedmsg-relay
+
+COPY files /
+
+RUN dnf -y copr enable clime/infra
 
 CMD ["/usr/sbin/init"]

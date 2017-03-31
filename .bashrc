@@ -135,6 +135,14 @@ function box {
     builtin cd -
 }
 
+function fibox {
+    builtin cd ~/docker/infra/
+    make $1 ${2:+tag="-$2"}
+    builtin cd -
+}
+
+alias cdplay='cd /srv/web/infra/ansible/playbooks'
+
 # source local definitions
 if [ -f	~/.local_bashrc ]; then
 	. ~/.local_bashrc
