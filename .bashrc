@@ -149,3 +149,12 @@ if [ -f	~/.local_bashrc ]; then
 fi
 
 source ~/scripts/alias_autocomplete.sh
+
+PATH="/home/clime/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/clime/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/clime/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/clime/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/clime/perl5"; export PERL_MM_OPT;
+
+#source /home/clime/pagure/pagure_env/bin/activate
+#export PYTHONPATH=$PYTHONPATH:/home/clime/pagure/

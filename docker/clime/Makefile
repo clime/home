@@ -14,6 +14,9 @@ run:
 		-v /home/clime/copr-flavor:/home/clime/copr-flavor \
 		-v /home/clime/infra:/home/clime/infra \
 		-v /home/clime/rpmbuild:/home/clime/rpmbuild \
+		-v /home/clime/rpkg-client:/home/clime/rpkg-client \
+		-v /tmp/tito:/tmp/tito \
+		-v /var/cache/dnf:/var/cache/dnf \
 		--name="clime$(tag)" \
 		clime-image
 
