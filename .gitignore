@@ -9,6 +9,7 @@
 !.local_bashrc_tmpl
 !.gitignore
 !.inputrc
+!.dircolors
 .vim/.netrwhist
 !todo.txt
 !coprtodo.txt
