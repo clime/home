@@ -17,6 +17,7 @@ run:
 		-v /home/clime/rpkg-client:/home/clime/rpkg-client \
 		-v /tmp/tito:/tmp/tito \
 		-v /var/cache/dnf:/var/cache/dnf \
+		--network=host \
 		--name="clime$(tag)" \
 		clime-image
 
