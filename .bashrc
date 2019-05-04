@@ -14,14 +14,10 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 if [[ $EUID -ne 0 ]]; then
-	# non-root only:
 	umask 002
 
 	cd() { 
         builtin cd $@; 
-        #if [ -f .runenv ]; then
-            #. .runenv
-        #fi
         ls; 
     }
 fi
@@ -30,8 +26,6 @@ set -o vi
 PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
 PATH=$PATH:./:/usr/local/bin:~/scripts/
 GREP_OPTIONS='--color=auto'
-
-#bind '"\t":menu-complete'
 
 stty werase undef
 bind '"\C-w": unix-filename-rubout'
@@ -106,19 +100,18 @@ function sudo-uwsgi-stop() {
 	sudo $UWSGI_BINPATH --stop "/var/run/uwsgi/$1.pid";
 }
 
-export ANSIBLE_KEEP_REMOTE_FILES=1
-
 # find lately modified files
 function latestmods { # todo
 	find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head -n $1;
 }
 
 alias clime.cz='ssh -p 1022 clime.cz'
+alias df.clime.cz='ssh df.clime.cz'
 
 alias p2packs='cd /usr/lib/python2.7/site-packages'
+alias p3packs='cd /usr/lib/python3.7/site-packages'
 export p2packs=/usr/lib/python2.7/site-packages
-alias p3packs='cd /usr/lib/python3.4/site-packages'
-export p3packs=/usr/lib/python3.4/site-packages
+export p3packs=/usr/lib/python3.7/site-packages
 
 alias sysrst="sudo systemctl restart"
 alias sysctl="sudo systemctl"
@@ -126,6 +119,7 @@ alias syslog="sudo journalctl -xe -u"
 
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
+alias porta3='ssh vm3.portadesign.cz'
 
 alias mk='make'
 

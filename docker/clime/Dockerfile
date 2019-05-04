@@ -1,5 +1,5 @@
-FROM fedora:27
-MAINTAINER clime@redhat.com
+FROM fedora:29
+MAINTAINER clime@fedoraproject.org
 
 ENV container docker
 RUN dnf -y update

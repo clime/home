@@ -11,7 +11,6 @@ set incsearch       " do incremental searching
 set sts=4           " allows backspacing four spaces at once
 set ts=4
 set sw=4
-set et
 set nobk            " no backup files (file~)
 set ai
 set wildmenu
@@ -23,8 +22,7 @@ set tags=.tags;/
 set noswf
 set formatoptions+=r
 set timeout ttimeoutlen=50
-set ignorecase
-set smartcase
+set et
 colorscheme my-candycode
 
 set clipboard=unnamedplus " yanking to/pasting from system clipboard!
@@ -221,3 +219,6 @@ map <ScrollWheelDown> <C-D>
 
 "------- custom filetypes autocmds -------
 autocmd BufNewFile,BufRead *.html set ts=2 sw=2
+
+" set autoindent for html.php
+autocmd BufRead,BufNewFile *.html.php set autoindent
