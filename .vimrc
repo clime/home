@@ -22,7 +22,7 @@ set tags=.tags;/
 set noswf
 set formatoptions+=r
 set timeout ttimeoutlen=50
-set et
+set noet
 colorscheme my-candycode
 
 set clipboard=unnamedplus " yanking to/pasting from system clipboard!
@@ -157,6 +157,9 @@ autocmd FileType c,cpp,python,css,html,htmldjango,javascript,php let b:AutoPairs
 let g:AutoPairsMapSpace = 1	" breaks iabs 
 let g:AutoPairsMapCR = 1    " breaks compatibility with some plugins
 let g:AutoPairsShortcutBackInsert = '<C-b>' " alt mappings do not work with kde-console
+
+"------- set filetype django templates -------
+autocmd BufRead,BufNewFile *.sh,*.bash set et
 
 "------- set filetype django templates -------
 autocmd BufRead,BufNewFile *.html set filetype=htmldjango
