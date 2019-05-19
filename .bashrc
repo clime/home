@@ -152,3 +152,5 @@ PERL_MM_OPT="INSTALL_BASE=/home/clime/perl5"; export PERL_MM_OPT;
 
 #source /home/clime/pagure/pagure_env/bin/activate
 #export PYTHONPATH=$PYTHONPATH:/home/clime/pagure/
+
+ix() { curl -n -F 'f:1=<-' http://ix.io; }
