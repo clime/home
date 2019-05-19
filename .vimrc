@@ -22,7 +22,7 @@ set tags=.tags;/
 set noswf
 set formatoptions+=r
 set timeout ttimeoutlen=50
-set noet
+set et
 colorscheme my-candycode
 
 set clipboard=unnamedplus " yanking to/pasting from system clipboard!
@@ -159,9 +159,6 @@ let g:AutoPairsMapCR = 1    " breaks compatibility with some plugins
 let g:AutoPairsShortcutBackInsert = '<C-b>' " alt mappings do not work with kde-console
 
 "------- set filetype django templates -------
-autocmd BufRead,BufNewFile *.sh,*.bash set et
-
-"------- set filetype django templates -------
 autocmd BufRead,BufNewFile *.html set filetype=htmldjango
 
 "------ updating titles on kde-konsole tabs -------
@@ -225,3 +222,6 @@ autocmd BufNewFile,BufRead *.html set ts=2 sw=2
 
 " set autoindent for html.php
 autocmd BufRead,BufNewFile *.html.php set autoindent
+
+" set noet for php
+autocmd BufRead,BufNewFile *.php set noet
