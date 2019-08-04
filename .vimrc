@@ -103,7 +103,7 @@ let g:syntastic_python_checkers = []
 "let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
 "let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_always_populate_loc_list = 1
-"
+
 "------- pathogen -------
 call pathogen#infect()
 call pathogen#helptags()

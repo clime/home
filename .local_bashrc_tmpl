@@ -9,20 +9,7 @@ PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e
 	#source virtualenvwrapper.sh
 #fi
 
-#. ~/.cdwww
-#. ~/.cdlos
-#. ~/.cdcwu
-
 PYTHONSTARTUP=~/.pythonrc
 
 shopt -s direxpand
 shopt -s dotglob
-
-alias coprbedev='ssh copr-be-dev.cloud.fedoraproject.org'
-alias coprfedev='ssh copr-fe-dev.cloud.fedoraproject.org'
-alias coprbe='ssh copr-be.cloud.fedoraproject.org'
-alias coprfe='ssh copr-fe.cloud.fedoraproject.org'
-export coprbedev=copr-be-dev.cloud.fedoraproject.org
-export coprfedev=copr-fe-dev.cloud.fedoraproject.org
-export coprbe=copr-be.cloud.fedoraproject.org
-export coprfe=copr-fe.cloud.fedoraproject.org

@@ -1,4 +1,4 @@
-FROM fedora:29
+FROM fedora:30
 MAINTAINER clime@fedoraproject.org
 
 ENV container docker
@@ -63,7 +63,5 @@ RUN cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 RUN cp .local_bashrc_tmpl .local_bashrc
 RUN echo 'export PS1="\[\e[33;1m\]\u\[\e[36;1m\]@\[\e[36;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]"' > .local_bashrc
 RUN chown clime:clime -R .
-
-RUN dnf -y copr enable @copr/copr
 
 CMD ["/usr/sbin/init"]
