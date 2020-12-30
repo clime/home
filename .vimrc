@@ -35,9 +35,6 @@ let maplocalleader = ","
 
 let python_highlight_all = 1
 
-"TODO map this:
-":noautocmd vimgrep /TODO/ **/*.py
-
 "------- xmledit -------
 let xml_tag_completion_map = ">>"
 
@@ -225,3 +222,6 @@ autocmd BufRead,BufNewFile *.html.php set autoindent
 
 " set noet for php
 autocmd BufRead,BufNewFile *.php set noet
+
+"------- fugitive configuration -------
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
