@@ -17,8 +17,8 @@ if [[ $EUID -ne 0 ]]; then
     umask 002
 
     cd() {
-        builtin cd $@; 
-        ls; 
+        builtin cd "$@"
+        ls
     }
 fi
 
@@ -52,15 +52,15 @@ alias cduuuu='cd ../../../../'
 
 mkcd() { mkdir $1 && cd $1; }
 
-cpu() { cp $@ ../; }
-cpuu() { cp $@ ../../; }
-cpuuu() { cp $@ ../../../; }
-cpuuuu() { cp $@ ../../../../; }
+cpu() { cp "$@" ../; }
+cpuu() { cp "$@" ../../; }
+cpuuu() { cp "$@" ../../../; }
+cpuuuu() { cp "$@" ../../../../; }
 
-mvu() { mv $@ ../; }
-mvuu() { mv $@ ../../; }
-mvuuu() { mv $@ ../../../; }
-mvuuuu() { mv $@ ../../../../; }
+mvu() { mv "$@" ../; }
+mvuu() { mv "$@" ../../; }
+mvuuu() { mv "$@" ../../../; }
+mvuuuu() { mv "$@" ../../../../; }
 
 # git related:
 alias gpull='git pull'
@@ -114,6 +114,39 @@ alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
 
 source ~/scripts/alias_autocomplete.sh
+
+ix() { curl -n -F 'f:1=<-' http://ix.io; }
+
+alias pscp="rsync -P -e ssh"
+
+# Usage:
+#
+# attach_to_thread <thread_name> 'gdb cmd'
+#
+# e.g.
+#
+# attach_to_thread CMPTO_NET_SERVE 'b SrtConnection.cpp:492'
+function attach_to_thread {
+    thread_name=$1
+
+    if [ -z "$thread_name" ]; then
+        echo "<thread_name> required" 1>&2
+        return 1
+    fi
+
+    thread_pid=
+    while true; do
+        thread_pid=$(ps -eL | grep "$thread_name" | awk '{ print $1; }')
+        if [ -n "$thread_pid" ]; then
+            break
+        fi
+        echo "Waiting for thread to spawn..."
+        sleep 1
+    done
+    echo "Found thread ${thread_name} with pid ${thread_pid}."
+
+    gdb -ex "$2" -p "$thread_pid"
+}
 
 # source local definitions
 if [ -f    ~/.local_bashrc ]; then
