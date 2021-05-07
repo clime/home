@@ -148,7 +148,9 @@ function attach_to_thread {
     gdb -ex "$2" -p "$thread_pid"
 }
 
+export EDITOR=vim
+
 # source local definitions
-if [ -f    ~/.local_bashrc ]; then
+if [ -f ~/.local_bashrc ]; then
     . ~/.local_bashrc
 fi
