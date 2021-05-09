@@ -24,7 +24,8 @@ fi
 
 set -o vi
 PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
-PATH=$PATH:./:/usr/local/bin:~/scripts/
+PATH=$PATH:./:/usr/local/bin:~/scripts
+
 GREP_OPTIONS='--color=auto'
 
 export HISTSIZE=10000
