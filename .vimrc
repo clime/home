@@ -223,5 +223,8 @@ autocmd BufRead,BufNewFile *.html.php set autoindent
 " set noet for php
 autocmd BufRead,BufNewFile *.php set noet
 
+" set yaml type for for yml files
+autocmd BufRead,BufNewFile *.yml set ft=yaml
+
 "------- fugitive configuration -------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
