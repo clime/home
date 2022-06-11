@@ -18,7 +18,7 @@ if [[ $EUID -ne 0 ]]; then
 
     cd() {
         builtin cd "$@"
-        ls
+        ls --color=auto
     }
 fi
 
@@ -26,7 +26,14 @@ set -o vi
 PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]" 
 PATH=$PATH:./:/usr/local/bin:~/scripts
 
-GREP_OPTIONS='--color=auto'
+# enable color support of ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
@@ -43,6 +50,7 @@ alias soba='source ~/.bashrc'
 alias suvim='sudo vim'
 alias sutail='sudo tail'
 
+alias ll='ls -l'
 alias lla='ll -a'
 alias lsa='ls -a'
 
