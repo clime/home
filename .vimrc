@@ -23,6 +23,7 @@ set noswf
 set formatoptions+=r
 set timeout ttimeoutlen=50
 set et
+set tabpagemax=100
 colorscheme my-candycode
 
 set clipboard=unnamedplus " yanking to/pasting from system clipboard!
