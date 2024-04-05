@@ -51,6 +51,9 @@ nnoremap <space> za
 "------- macros -------
 let @c='^df,Op==$x^iself.ly$$a = pj' " a, b, --> self.a = a<NL>self.b = b
 
+"------- custom exit -------
+nnoremap <leader><esc><esc> :qa!<CR>
+
 "------- custom mappings -------
 " <C-v> is normally used for literal 
 " inserting of the following character
@@ -229,3 +232,24 @@ autocmd BufRead,BufNewFile *.yml set ft=yaml
 
 "------- fugitive configuration -------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+"------- GPT configuration -------
+let g:vim_ai_chat = {
+\  "options": {
+\    "model": "gpt-3.5-turbo",
+\    "temperature": 0.2,
+\  },
+\}
+
+" TODO: complete engine vs. chat engine? How they differ?
+" complete engine doesn't work here (maybe because of the gpt-3.5-turbo model?)
+let g:vim_ai_complete = {
+\  "engine": "chat",
+\  "options": {
+\    "model": "gpt-3.5-turbo",
+\    "max_tokens": 1000,
+\    "temperature": 0.1,
+\    "request_timeout": 20,
+\    "selection_boundary": "###",
+\  },
+\}

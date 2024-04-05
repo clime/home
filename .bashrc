@@ -159,6 +159,8 @@ function attach_to_thread {
 
 export EDITOR=vim
 
+alias psql='PAGER="vim -" psql'
+
 # source local definitions
 if [ -f ~/.local_bashrc ]; then
     . ~/.local_bashrc
