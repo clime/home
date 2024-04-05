@@ -1,13 +1,17 @@
 # .bashrc
 
-PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]"
+if [[ $EUID -ne 0 ]]; then
+    PS1="\[\e[33;1m\]\u\[\e[32;1m\]@\[\e[32;1m\]\h \[\e[37;1m\]\w\[\e[32;1m\] $ \[\e[0m\]"
+else
+    PS1="\[\e[31;1m\]\u\[\e[31;1m\]@\[\e[31;1m\]\h \[\e[31;1m\]\w\[\e[31;1m\] $ \[\e[0m\]"
+fi
 
 # virtualenvwrapper
-#if [[ $EUID -ne 0 ]]; then
-	#WORKON_HOME=/srv/www/envs
-	#VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
-	#source virtualenvwrapper.sh
-#fi
+if [[ $EUID -ne 0 ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
 
 PYTHONSTARTUP=~/.pythonrc
 
