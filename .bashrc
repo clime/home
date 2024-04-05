@@ -53,6 +53,7 @@ alias sutail='sudo tail'
 alias ll='ls -l'
 alias lla='ll -a'
 alias lsa='ls -a'
+alias ltr='ls -ltr'
 
 alias cdu='cd ../'
 alias cduu='cd ../../'
