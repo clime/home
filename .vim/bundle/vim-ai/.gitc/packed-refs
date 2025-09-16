@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+b91bb0e40a6d61aea4039697d7b021872c261670 refs/remotes/origin/main
+a2fd6d89c42c38f7bc180c3191d4567c17bd87e1 refs/remotes/origin/next
+cdc4ce29d1cea7fdace1b8669e13a85f1af1a8e8 refs/remotes/origin/vim-py

@@ -1,0 +1,3 @@
+b91bb0e40a6d61aea4039697d7b021872c261670 cdba3579d66956d356c424945a346a0f044facea clime <clime@desktop.exe> 1681846448 +0200	fetch -a: fast-forward
+cdba3579d66956d356c424945a346a0f044facea 5d4a1a382d2bd8d9d9b49bb531c664eb62296b2f clime <clime@desktop.exe> 1682330737 +0200	pull --rebase: fast-forward
+5d4a1a382d2bd8d9d9b49bb531c664eb62296b2f d1ca0f4e8fbeee3b4c82fa242d680d82329fd802 Michal Novotny <michal.novotny@comprimato.com> 1758034738 +0200	pull --rebase: fast-forward

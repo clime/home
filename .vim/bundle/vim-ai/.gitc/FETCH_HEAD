@@ -1,0 +1,15 @@
+d1ca0f4e8fbeee3b4c82fa242d680d82329fd802		branch 'main' of https://github.com/madox2/vim-ai
+55c4e2ec836e48552b52fb4b7878f7b50f67b53b	not-for-merge	branch 'base-url-config' of https://github.com/madox2/vim-ai
+58d1dfb3d6caa992280a1fe99b0f7e6a8c2084be	not-for-merge	branch 'big-prompt-rendering-optimization' of https://github.com/madox2/vim-ai
+cb2ac5f7a672faeb7b81886b6c1f1481ef51f90d	not-for-merge	branch 'config-refactoring' of https://github.com/madox2/vim-ai
+6a053767af08d6edfb46b4be72f05a9b3bc7be04	not-for-merge	branch 'custom-roles' of https://github.com/madox2/vim-ai
+e4c3dad037a1950de5eee153c45c2eddfe0f8f7a	not-for-merge	branch 'empty-response-elimination' of https://github.com/madox2/vim-ai
+bc4c60ed7f2d09c7f3171023aee2debb8e47278d	not-for-merge	branch 'feature/add-openai-options' of https://github.com/madox2/vim-ai
+be5ccb9e7b79063d3a2ad44d91f7631b3272779c	not-for-merge	branch 'keep-open-mode-multiple-chats' of https://github.com/madox2/vim-ai
+66da0784448b47a104723976da8e4265a5bbd926	not-for-merge	branch 'next' of https://github.com/madox2/vim-ai
+08f725e4a7f6c3ab2d9c452affb6ae7248ff0c49	not-for-merge	branch 'populate-options' of https://github.com/madox2/vim-ai
+0ab20f8aa43fc128600736bcc45115635011d3d4	not-for-merge	branch 'provider-extensions' of https://github.com/madox2/vim-ai
+96607de0038ee3f5356cee6d5f268a11d86976f3	not-for-merge	branch 'provider-openai-poc' of https://github.com/madox2/vim-ai
+cefa3c1fa9ed73829b57f66829dd3138c315e0fa	not-for-merge	branch 'support-non-streaming' of https://github.com/madox2/vim-ai
+cdc4ce29d1cea7fdace1b8669e13a85f1af1a8e8	not-for-merge	branch 'vim-py' of https://github.com/madox2/vim-ai
+30284bedf9afab6cac82fbea2922e0d1f5f2576b	not-for-merge	tag 'v2.1.0' of https://github.com/madox2/vim-ai
