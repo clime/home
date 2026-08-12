@@ -16,10 +16,10 @@ fi
 if [[ $EUID -ne 0 ]]; then
     umask 002
 
-    cd() {
-        builtin cd "$@"
-        ls --color=auto
-    }
+    #cd() {
+    #    builtin cd "$@"
+    #    ls --color=auto
+    #}
 fi
 
 set -o vi

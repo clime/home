@@ -51,6 +51,9 @@ nnoremap <space> za
 "------- macros -------
 let @c='^df,Op==$x^iself.ly$$a = pj' " a, b, --> self.a = a<NL>self.b = b
 
+"------- visual block selection --------
+nnoremap <c-q> <c-v>
+
 "------- custom exit -------
 nnoremap <leader><esc><esc> :qa!<CR>
 
@@ -232,6 +235,12 @@ autocmd BufRead,BufNewFile *.yml set ft=yaml
 
 "------- fugitive configuration -------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+"------- vrg_project_settings -------
+augroup vrg_project_settings
+    autocmd!
+    autocmd BufNewFile,BufRead /mnt/c/VRG/**/* set noexpandtab tabstop=4 shiftwidth=4 softtabstop=0
+augroup END
 
 "------- GPT configuration -------
 let g:vim_ai_chat = {
